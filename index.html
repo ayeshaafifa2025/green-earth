@@ -3,12 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare
+     .com/ajax/libs/font-awesome
+     /7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1c
+      Ubujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+       crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- google font family -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz
+     ,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+     <!-- css file -->
+      <link rel="stylesheet" href="styles/style.css">
     <title>Green Earth</title>
 </head>
-<body>
+<body class="">
     <header>
-        <nav>
-
+        <nav class="flex bg-green-500 justify-between items-center px-8 py-4">
+            <h1 class="font-inter text-3xl text-[#FFFFFF]">Green Earth</h1>
+                <ul class="flex gap-5 text-[#FFFFFF] ">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="">Plant a Tree</a></li>
+                </ul>
+            <button class="bg-[#FACC15] text-[#15803D] text-[12px] rounded-xl px-4 py-2">Plant a Tree</button>
         </nav>
         <section>
 
@@ -20,5 +42,6 @@
     <footer>
 
     </footer>
+    <script src="javascripts/first.js"></script>
 </body>
 </html>
