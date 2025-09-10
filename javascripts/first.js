@@ -110,7 +110,7 @@ const displayCart = () => {
     const total = cartItems.reduce((sum, item) => sum + item.price, 0);
     const totalDiv = document.createElement("div");
     totalDiv.classList.add("font-semibold", "text-lg", "mt-2", "border-t", "pt-2", "flex", "justify-between");
-    totalDiv.innerHTML = `<span>Total:</span><span>৳ ${total}</span>`;
+    totalDiv.innerHTML = `<span>Total:</span><span>${total}</span>`;
     cartContainer.append(totalDiv);
 };
 

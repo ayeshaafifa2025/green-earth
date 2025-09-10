@@ -69,7 +69,7 @@ const displayTree = (plants) => {
         <p class="text-[13px] text-gray-600 mb-3">${plant.description}</p>
         <div class="flex justify-between items-center">
           <button class="bg-[#DCFCE7] text-[#15803D] text-[12px] px-3 py-1 rounded-lg mb-3">${plant.category}</button>
-          <p class="font-semibold text-gray-800">৳ ${plant.price}</p>
+          <p class="font-semibold text-gray-800">${plant.price}</p>
         </div>
         <button onclick="addToCart(${plant.id})" class= "bg-[#15803D] text-white rounded-xl w-full py-3 font-semibold hover:bg-green-700 transition">Add to Cart</button>
       </div>
