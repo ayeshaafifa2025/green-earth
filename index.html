@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- font awesome cdn -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
      
        <!-- daisy ui -->
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-       <!-- tailwind css -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+       
     <!-- google font family -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +53,7 @@
 </head>
 <body class="bg-[#F0FDF4]">
     <header>
-        <nav class="flex bg-green-500 justify-between items-center px-4 md:px-8 py-2 md:py-4">
+        <nav class="flex  bg-green-500 justify-between items-center px-4 md:px-8 py-2 md:py-4">
             <div class="flex justify-between items-center">
                 <img src="images/icons8-tree-48.png" alt="">
                 <h1 class="font-inter text-xl md:text-3xl text-[#FFFFFF]">Green Earth</h1>
@@ -81,6 +82,29 @@
         </section>
     </header>
     <main>
+
+  <!-- 3 different spinner-->
+
+<!-- 
+Spinner overlay -->
+<!-- <section id="spinner" class="fixed inset-0 bg-white/70 flex hidden justify-center items-center z-50">
+  <span class="loading loading-bars loading-xl"></span>
+</section> -->
+
+<!-- <section id="spinner" class="fixed inset-0 bg-white/70 flex hidden justify-center items-center z-50">
+  <div class="w-16 h-16 border-4 border-green-500 border-dashed rounded-full animate-spin"></div>
+</section>  -->
+
+<!-- Spinner -->
+<section id="spinner" class="fixed inset-0 bg-white/70 flex hidden justify-center items-center z-50">
+  <div class="flex flex-col items-center space-y-2">
+    <!-- Outer spinning ring -->
+    <div class="w-16 h-16 border-4 border-t-green-500 border-green-200 rounded-full animate-spin"></div>
+    <!-- Optional loading text -->
+    <p class="text-green-600 font-medium">Loading...</p>
+  </div>
+</section>
+
 
 <section class="">
     <h1 class="text-center mb-5 font-semibold text-[32px]">Choose Your Trees</h1>
