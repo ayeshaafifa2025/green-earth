@@ -86,7 +86,7 @@ const disPlayCategories = (categories) => {
   categories.forEach(category => {
     const btnDiv = document.createElement("div");
     btnDiv.innerHTML = `
-      <button id="category-btn-${category.id}" onclick="loadCategories(${category.id})" class="btn btn-outline w-full plant-btn">
+      <button id="category-btn-${category.id}" onclick="loadCategories(${category.id})" class=" btn w-full plant-btn">
         ${category.category_name}
       </button>
     `;
