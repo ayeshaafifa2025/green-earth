@@ -47,20 +47,35 @@ const disPlayAllPlants = (plants) => {
     plants.forEach(plant => {
         const postCard = document.createElement("div");
         postCard.classList.add("post-card");
+        // postCard.innerHTML = `
+        //     <div class="bg-white shadow-md rounded-lg p-4 flex flex-col gap-2">
+        //         <img src="${plant.image}" alt="${plant.name}" class="w-full h-40 object-cover rounded-md">
+        //         <h3 onclick="loadPlantDetail(${plant.id})" class="font-semibold text-lg">${plant.name}</h3>
+        //         <p class="text-gray-600 text-sm">${plant.description}</p>
+        //         <div class="flex justify-between items-center mt-2 mb-2">
+        //             <button  class="bg-[#DCFCE7] text-[#15803D] text-xs px-3 py-1 rounded-lg">${plant.category}</button>
+        //             <p class="font-semibold text-gray-800"> ${plant.price}</p>
+        //         </div>
+        //         <button onclick="addToCart(${plant.id})" class="bg-[#15803D] text-white rounded-xl w-full py-2 font-semibold hover:bg-green-700 transition">
+        //             Add to Cart
+        //         </button>
+        //     </div>
+        // `;
         postCard.innerHTML = `
-            <div class="bg-white shadow-md rounded-lg p-4 flex flex-col gap-2">
-                <img src="${plant.image}" alt="${plant.name}" class="w-full h-40 object-cover rounded-md">
-                <h3 onclick="loadPlantDetail(${plant.id})" class="font-semibold text-lg">${plant.name}</h3>
-                <p class="text-gray-600 text-sm">${plant.description}</p>
-                <div class="flex justify-between items-center mt-2 mb-2">
-                    <button  class="bg-[#DCFCE7] text-[#15803D] text-xs px-3 py-1 rounded-lg">${plant.category}</button>
-                    <p class="font-semibold text-gray-800"> ${plant.price}</p>
-                </div>
-                <button onclick="addToCart(${plant.id})" class="bg-[#15803D] text-white rounded-xl w-full py-2 font-semibold hover:bg-green-700 transition">
-                    Add to Cart
-                </button>
-            </div>
-        `;
+    <div class="bg-white rounded-lg shadow-md p-3 sm:p-4 flex flex-col gap-2">
+        <img src="${plant.image}" alt="${plant.name}" class="w-full h-40 sm:h-48 object-cover rounded-md">
+        <h3 onclick="loadPlantDetail(${plant.id})" class="font-semibold text-[16px] sm:text-lg mb-2 cursor-pointer">${plant.name}</h3>
+        <p class="text-[13px] sm:text-sm text-gray-600 mb-3">${plant.description}</p>
+        <div class="flex justify-between items-center flex-wrap gap-2">
+            <button class="bg-[#DCFCE7] text-[#15803D] text-[12px] sm:text-sm px-3 py-1 rounded-lg">${plant.category}</button>
+            <p class="font-semibold text-gray-800 text-sm sm:text-base">${plant.price}</p>
+        </div>
+        <button onclick="addToCart(${plant.id})" class="bg-[#15803D] text-white rounded-xl w-full py-2 sm:py-3 font-semibold hover:bg-green-700 transition">
+            Add to Cart
+        </button>
+    </div>
+`;
+
         mainContainer.append(postCard);
     });
     
@@ -96,13 +111,21 @@ const displayCart = () => {
     cartItems.forEach(plant => {
         const cartPost = document.createElement("div");
         cartPost.classList.add("post-card", "bg-[#f3f4f6]", "p-3", "rounded-lg", "mb-3", "flex", "justify-between", "items-center");
+        // cartPost.innerHTML = `
+        //     <div>
+        //         <h2 class="font-semibold">${plant.name}</h2>
+        //         <p>${plant.price} × 1</p>
+        //     </div>
+        //     <button onclick="removeFromCart(${plant.id})" class="text-red-500 font-bold text-lg hover:text-red-700">&times;</button>
+        // `;
         cartPost.innerHTML = `
-            <div>
-                <h2 class="font-semibold">${plant.name}</h2>
-                <p>${plant.price} × 1</p>
-            </div>
-            <button onclick="removeFromCart(${plant.id})" class="text-red-500 font-bold text-lg hover:text-red-700">&times;</button>
-        `;
+    <div class="flex-1 min-w-[120px]">
+        <h2 class="font-semibold text-sm sm:text-base">${plant.name}</h2>
+        <p class="text-xs sm:text-sm">${plant.price} × 1</p>
+    </div>
+    <button onclick="removeFromCart(${plant.id})" class="text-red-500 font-bold text-lg hover:text-red-700">&times;</button>
+`;
+
         cartContainer.append(cartPost);
     });
 
@@ -116,6 +139,7 @@ const displayCart = () => {
 
 // initial
 loadAllPlants();
+
 
 
 

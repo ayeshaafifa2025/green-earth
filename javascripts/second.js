@@ -62,18 +62,33 @@ const displayTree = (plants) => {
   plants.forEach(plant => {
     const postCard = document.createElement("div");
     postCard.classList.add("post-card");
+    // postCard.innerHTML = `
+    //   <div class="bg-white rounded-lg shadow-md p-4 flex flex-col gap-2">
+    //     <img src="${plant.image}" alt="${plant.name}" class="w-full h-40 object-cover rounded-md">
+    //     <h3 onclick="loadPlantDetail(${plant.id})" class="font-semibold text-[16px] mb-2">${plant.name}</h3>
+    //     <p class="text-[13px] text-gray-600 mb-3">${plant.description}</p>
+    //     <div class="flex justify-between items-center">
+    //       <button class="bg-[#DCFCE7] text-[#15803D] text-[12px] px-3 py-1 rounded-lg mb-3">${plant.category}</button>
+    //       <p class="font-semibold text-gray-800">${plant.price}</p>
+    //     </div>
+    //     <button onclick="addToCart(${plant.id})" class= "bg-[#15803D] text-white rounded-xl w-full py-3 font-semibold hover:bg-green-700 transition">Add to Cart</button>
+    //   </div>
+    // `;
     postCard.innerHTML = `
-      <div class="bg-white rounded-lg shadow-md p-4 flex flex-col gap-2">
-        <img src="${plant.image}" alt="${plant.name}" class="w-full h-40 object-cover rounded-md">
-        <h3 onclick="loadPlantDetail(${plant.id})" class="font-semibold text-[16px] mb-2">${plant.name}</h3>
-        <p class="text-[13px] text-gray-600 mb-3">${plant.description}</p>
-        <div class="flex justify-between items-center">
-          <button class="bg-[#DCFCE7] text-[#15803D] text-[12px] px-3 py-1 rounded-lg mb-3">${plant.category}</button>
-          <p class="font-semibold text-gray-800">${plant.price}</p>
+    <div class="bg-white rounded-lg shadow-md p-3 sm:p-4 flex flex-col gap-2">
+        <img src="${plant.image}" alt="${plant.name}" class="w-full h-40 sm:h-48 object-cover rounded-md">
+        <h3 onclick="loadPlantDetail(${plant.id})" class="font-semibold text-[16px] sm:text-lg mb-2 cursor-pointer">${plant.name}</h3>
+        <p class="text-[13px] sm:text-sm text-gray-600 mb-3">${plant.description}</p>
+        <div class="flex justify-between items-center flex-wrap gap-2">
+            <button class="bg-[#DCFCE7] text-[#15803D] text-[12px] sm:text-sm px-3 py-1 rounded-lg">${plant.category}</button>
+            <p class="font-semibold text-gray-800 text-sm sm:text-base">${plant.price}</p>
         </div>
-        <button onclick="addToCart(${plant.id})" class= "bg-[#15803D] text-white rounded-xl w-full py-3 font-semibold hover:bg-green-700 transition">Add to Cart</button>
-      </div>
-    `;
+        <button onclick="addToCart(${plant.id})" class="bg-[#15803D] text-white rounded-xl w-full py-2 sm:py-3 font-semibold hover:bg-green-700 transition">
+            Add to Cart
+        </button>
+    </div>
+`;
+
     mainContainer.append(postCard);
   });
 };
@@ -85,14 +100,27 @@ const disPlayCategories = (categories) => {
 
   categories.forEach(category => {
     const btnDiv = document.createElement("div");
+    // btnDiv.innerHTML = `
+    //   <button id="category-btn-${category.id}" onclick="loadCategories(${category.id})" class=" btn w-full plant-btn">
+    //     ${category.category_name}
+    //   </button>
+    // `;
     btnDiv.innerHTML = `
-      <button id="category-btn-${category.id}" onclick="loadCategories(${category.id})" class=" btn w-full plant-btn">
+    <button id="category-btn-${category.id}" onclick="loadCategories(${category.id})" 
+        class="btn w-full plant-btn text-sm sm:text-base">
         ${category.category_name}
-      </button>
-    `;
+    </button>
+`;
+  
     categoryContainer.append(btnDiv);
   });
 };
 
 // Initial load
 loadAllCategory();   
+
+
+
+
+
+
